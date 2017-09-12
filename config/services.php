@@ -34,5 +34,9 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'igdb' => [
+        'key' => 'a79713d681eae6a8af5708dc9560be6d',
+        'url' => 'https://api-2445582011268.apicast.io'
+    ],
 
 ];

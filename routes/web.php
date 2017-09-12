@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $game = IGDB::getGame(9630);
+    Log::info(print_r($game, true));
+    return view('welcome', compact('game'));
 });
