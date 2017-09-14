@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-
-    $game = IGDB::getGame(9630);
-    Log::info(print_r($game, true));
-    return view('welcome', compact('game'));
+    return view('home');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
