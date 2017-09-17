@@ -19,6 +19,8 @@ class CreateGamesTable extends Migration
             $table->string("release_date");
             $table->text("summary");
             $table->text("developer");
+            $table->string('image_url');
+            $table->string('trailer_url');
             $table->timestamps();
         });
     }

@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Messerli90\IGDB\IGDBServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -177,6 +178,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -227,6 +229,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'IGDB' => \Messerli90\IGDB\Facades\IGDB::class,
+
 
     ],
 
