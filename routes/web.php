@@ -18,6 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/games', function (){
-    return view('games');
-});
+
+Route::get('/games', 'GamesController@index');
+Route::get('/games/{game}', 'GamesController@show');
