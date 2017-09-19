@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Review;
 
 class GamesController extends Controller
 {
@@ -11,8 +12,8 @@ class GamesController extends Controller
         return view('games.index', compact('games'));
     }
 
-    public function show($id) {
-        $games = Game::find($id);
-        return view('games.show', compact('games'));
+    public function show(Game $game, Review $review) {
+//        $games = Game::find($game);
+        return view('games.show', compact('game', 'review'));
     }
 }

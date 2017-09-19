@@ -21,3 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/games', 'GamesController@index');
 Route::get('/games/{game}', 'GamesController@show');
+
+Route::get('/games/{game}/create', 'ReviewsController@create');
+Route::post('/games', 'ReviewsController@store');
+//Route::get('/reviews', 'ReviewsController@index');
+//Route::get('/reviews/create', 'ReviewsController@create');
+//Route::post('/reviews', 'ReviewsController@store');
