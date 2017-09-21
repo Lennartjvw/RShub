@@ -24,17 +24,18 @@ class ReviewsController extends Controller
         return view('reviews.create', compact('game'));
     }
 
-    public function store()
+    public function store(Game $game)
     {
 
         Review::create([
 
             'game_id' => request('game_id'),
-            'name' => request('name'),
             'review' => request('review'),
             'rating' => request('rating')
 
         ]);
+
+//        $review->addReview(request('review'));
 
         return redirect('/');
     }

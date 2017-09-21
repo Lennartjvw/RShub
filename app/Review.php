@@ -8,8 +8,12 @@ class Review extends Model
 {
     protected $fillable  = [
         'game_id',
-        'name',
         'review',
         'rating'
     ];
+
+    public function game(){
+        return $this->belongsTo(Game::class);
+    }
+
 }

@@ -19,7 +19,14 @@
 
                 </div>
 
-                <li>Review: {{ $review-> }}</li>
+                <h1>All reviews for this game:</h1>
+                <hr>
+                @foreach($game->reviews as $review)
+                    <li>{{ $game->name }}</li>
+                    <li>{{ $review->review }}</li>
+                    <li>{{ $review->rating}}</li>
+                    <hr>
+                @endforeach
             </div>
         </div>
     </div>

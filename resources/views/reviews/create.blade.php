@@ -22,12 +22,12 @@
 
                         <input id="game_id" name="game_id" type="hidden" value="{{ $game->id }}">
 
-                        <input id="name" name="name" type="hidden" value="{{ $game->name }}">
+                        {{--<input id="name" name="name" type="hidden" value="{{ $game->name }}">--}}
 
 
 
                         <label for="review">Review</label>
-                        <textarea id="subject" name="review" placeholder="Write something.." style="height:200px"></textarea><br>
+                        <textarea id="subject" name="review" placeholder="Write something.." style="height:200px" required></textarea><br>
 
                         <label for="rating">Rating</label>
                         <select id="country" name="rating">
