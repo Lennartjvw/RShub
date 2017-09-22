@@ -13,7 +13,8 @@
                         <img src="{{ $game->image_url }}" alt="Image not found" width="200px">
                     </li>
 
-                    <li><a href="{{ url('/games/'.$game->id.'/create') }}">Create a review</a> </li>
+                    <li><a href="{{ url('/games/'.$game->id.'/create-review') }}">Create a review</a> </li>
+                    <li><a href="{{ url('/games/'.$game->id.'/create-story') }}">Create a story</a> </li>
 
                     <a href="{{ url('/games') }}"><p>Go back</p></a>
 
@@ -25,6 +26,14 @@
                     <li>{{ $game->name }}</li>
                     <li>{{ $review->review }}</li>
                     <li>{{ $review->rating}}</li>
+                    <hr>
+                @endforeach
+
+                <h1>All stories for this game:</h1>
+                <hr>
+                @foreach($game->stories as $story)
+                    <li>{{ $game->name }}</li>
+                    <li>{{ $story->story }}</li>
                     <hr>
                 @endforeach
             </div>
