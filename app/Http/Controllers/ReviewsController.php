@@ -37,6 +37,6 @@ class ReviewsController extends Controller
 
 //        $review->addReview(request('review'));
 
-        return redirect('/');
+        return redirect('/games');
     }
 }

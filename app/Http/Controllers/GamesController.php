@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Game;
-//use App\Review;
 
 class GamesController extends Controller
 {
@@ -13,10 +12,8 @@ class GamesController extends Controller
     }
 
     public function show(Game $game) {
-//        $reviews = Review::all();
         return view('games.show', compact('game', 'reviews'));
     }
-
 
     public function add(){
         return view('games.add');
@@ -33,7 +30,7 @@ class GamesController extends Controller
             'trailer_url' => request('trailer_url')
         ]);
 
-        return redirect('/');
+        return redirect('/games');
 
     }
 }

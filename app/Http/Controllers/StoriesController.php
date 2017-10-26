@@ -23,7 +23,7 @@ class StoriesController extends Controller
             'video_url' => request('video_url')
         ]);
 
-        return redirect('/');
+        return redirect('/games');
 
     }
 

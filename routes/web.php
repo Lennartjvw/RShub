@@ -8,20 +8,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Games
 Route::get('/games', 'GamesController@index');
 Route::get('/games/add-game', 'GamesController@add');
 Route::post('/games/add-game', 'GamesController@store');
 Route::get('/games/{game}', 'GamesController@show');
 
+//Stories
 Route::get('/games/{game}/create-story', 'StoriesController@create');
 Route::post('/games/create-story', 'StoriesController@store');
 
+//Reviews
 Route::get('/games/{game}/create-review', 'ReviewsController@create');
 Route::post('/games/create-review', 'ReviewsController@store');
 
-
-
-
-//Route::get('/reviews', 'ReviewsController@index');
-//Route::get('/reviews/create', 'ReviewsController@create');
-//Route::post('/reviews', 'ReviewsController@store');
