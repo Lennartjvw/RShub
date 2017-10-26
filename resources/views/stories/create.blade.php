@@ -13,7 +13,7 @@
 
                 </div>
                 <div class="container">
-                    <form action="/games" method="POST">
+                    <form action="/games/create-story" method="POST">
 
                         {{ csrf_field() }}
 

@@ -15,7 +15,7 @@
 
                 </div>
                 <div class="container">
-                    <form action="/games" method="POST">
+                    <form action="/games/create-review" method="POST">
 
                         {{ csrf_field() }}
 

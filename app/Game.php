@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
+
+    protected $fillable  = [
+        'name',
+        'release_date',
+        'summary',
+        'developer',
+        'image_url',
+        'trailer_url'
+    ];
+
     public function reviews(){
         return $this->hasMany(Review::class);
     }
