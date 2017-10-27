@@ -8,6 +8,12 @@ use App\Story;
 
 class StoriesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function create(Game $game)
     {
         return view('stories.create', compact('game'));
@@ -17,6 +23,7 @@ class StoriesController extends Controller
 
         Story::create([
             'game_id' => request('game_id'),
+            'user_id' => auth()->id(),
             'completed' => request('completed'),
             'story' => request('story'),
             'image_url' => request('image_url'),

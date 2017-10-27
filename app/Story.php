@@ -8,6 +8,7 @@ class Story extends Model
 {
     protected $fillable  = [
         'game_id',
+        'user_id',
         'completed',
         'story',
         'image_url',

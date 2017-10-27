@@ -34,6 +34,7 @@
                 <hr>
                 @foreach($game->stories as $story)
                     <li>{{ $game->name }}</li>
+                    <li>{{ $story->user->name }}</li>
                     <li>{{ $story->story }}</li>
                     <hr>
                 @endforeach
