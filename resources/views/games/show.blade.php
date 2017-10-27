@@ -24,6 +24,7 @@
                 <hr>
                 @foreach($game->reviews as $review)
                     <li>{{ $game->name }}</li>
+                    <li>{{ $review->user->name }}</li>
                     <li>{{ $review->review }}</li>
                     <li>{{ $review->rating}}</li>
                     <hr>

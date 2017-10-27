@@ -22,9 +22,9 @@ class ReviewsController extends Controller
         return view('reviews.index');
     }
 
-    public function show(Game $game)
+    public function show(Game $game, User $user)
     {
-        return view('reviews.show', compact('game'));
+        return view('reviews.show', compact('game', 'user'));
     }
 
     public function create(Game $game)
@@ -35,8 +35,6 @@ class ReviewsController extends Controller
     public function store(Game $game, User $user)
     {
 
-
-
         Review::create([
 
             'game_id' => request('game_id'),
@@ -45,8 +43,6 @@ class ReviewsController extends Controller
             'rating' => request('rating')
 
         ]);
-
-//        $review->addReview(request('review'));
 
         return redirect('/games');
     }
