@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Game;
 use App\Review;
+use App\User;
+use Auth;
 
 class ReviewsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index()
     {
         return view('reviews.index');
@@ -24,12 +32,15 @@ class ReviewsController extends Controller
         return view('reviews.create', compact('game'));
     }
 
-    public function store(Game $game)
+    public function store(Game $game, User $user)
     {
+
+
 
         Review::create([
 
             'game_id' => request('game_id'),
+            'user_id' => auth()->id(),
             'review' => request('review'),
             'rating' => request('rating')
 

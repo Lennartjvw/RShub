@@ -16,6 +16,7 @@ class CreateStoriesTable extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('game_id');
+            $table->integer('user_id');
             $table->boolean('completed')->default(0);
             $table->text('story');
             $table->string('image_url');

@@ -21,6 +21,7 @@
 
 
                         <input id="game_id" name="game_id" type="hidden" value="{{ $game->id }}">
+                        <input id="user_id" name="user_id" type="hidden" value="{{ Auth::user()->id }}">
 
                         {{--<input id="name" name="name" type="hidden" value="{{ $game->name }}">--}}
 
