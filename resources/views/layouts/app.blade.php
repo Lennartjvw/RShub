@@ -60,6 +60,8 @@
                                             Logout
                                         </a>
 
+                                        {{--<a href="{{ route('user/'.Auth::user()->id) }}" My page</a>--}}
+
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>

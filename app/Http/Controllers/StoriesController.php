@@ -13,7 +13,7 @@ class StoriesController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function create(Game $game)
     {
         return view('stories.create', compact('game'));

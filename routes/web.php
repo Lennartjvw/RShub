@@ -22,3 +22,7 @@ Route::post('/games/create-story', 'StoriesController@store');
 Route::get('/games/{game}/create-review', 'ReviewsController@create');
 Route::post('/games/create-review', 'ReviewsController@store');
 
+//Users
+Route::get('/user/{id}', 'UsersController@show');
+Route::get('/user/{id}/edit', 'UsersController@show');
+

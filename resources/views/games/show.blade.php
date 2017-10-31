@@ -23,19 +23,19 @@
                 <h1>All reviews for this game:</h1>
                 <hr>
                 @foreach($game->reviews as $review)
-                    <li>{{ $game->name }}</li>
-                    <li>{{ $review->user->name }}</li>
-                    <li>{{ $review->review }}</li>
-                    <li>{{ $review->rating}}</li>
+                    <li>Name: {{ $game->name }}</li>
+                    <li>Review written by {{ $review->user->name }} at {{ $review->created_at }}</li>
+                    <li>Review: {{ $review->review }}</li>
+                    <li>Rating: {{ $review->rating}}</li>
                     <hr>
                 @endforeach
 
                 <h1>All stories for this game:</h1>
                 <hr>
                 @foreach($game->stories as $story)
-                    <li>{{ $game->name }}</li>
-                    <li>{{ $story->user->name }}</li>
-                    <li>{{ $story->story }}</li>
+                    <li>Game: {{ $game->name }}</li>
+                    <li>Story written by {{ $story->user->name }} at {{ $story->created_at }}</li>
+                    <li>Story {{ $story->story }}</li>
                     <hr>
                 @endforeach
             </div>

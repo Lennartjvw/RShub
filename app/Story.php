@@ -13,7 +13,6 @@ class Story extends Model
         'story',
         'image_url',
         'video_url'
-
     ];
 
     public function game(){
