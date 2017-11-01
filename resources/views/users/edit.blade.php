@@ -35,7 +35,6 @@
                         <input type="submit" value="Delete"><br>
                     </form>
 
-
                 </div>
 
             </div>

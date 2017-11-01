@@ -34,4 +34,8 @@ class StoriesController extends Controller
 
     }
 
+    public function edit($id){
+
+    }
+
 }

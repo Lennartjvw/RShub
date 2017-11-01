@@ -17,10 +17,14 @@ Route::get('/games/{game}', 'GamesController@show');
 //Stories
 Route::get('/games/{game}/create-story', 'StoriesController@create');
 Route::post('/games/create-story', 'StoriesController@store');
+Route::get('/games/edit-story/{id}', 'StoriesController@edit');
 
 //Reviews
 Route::get('/games/{game}/create-review', 'ReviewsController@create');
 Route::post('/games/create-review', 'ReviewsController@store');
+Route::get('/games/edit-review/{id}', 'ReviewsController@edit');
+Route::patch('/games/edit-review/{id}', 'ReviewsController@update');
+Route::delete('/games/edit-review/{id}', 'ReviewsController@delete');
 
 //Users
 Route::get('/user/{id}', 'UsersController@show');

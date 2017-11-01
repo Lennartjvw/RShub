@@ -46,4 +46,33 @@ class ReviewsController extends Controller
 
         return redirect('/games');
     }
+
+    public function edit($id){
+
+        $review = Review::findOrFail($id);
+        $user = Auth::user();
+
+        if ($user->id == $review->user_id) {
+            return view('reviews.edit', compact('review', 'user'));
+        }
+        else {
+            return redirect('/games');
+        }
+    }
+
+    public function update($id, Request $request){
+
+        $review = Review::findOrFail($id);
+        $review->update($request->all());
+
+        return redirect('games');
+    }
+
+    public function delete($id){
+        $review = Review::findOrFail($id);
+
+        $review->delete();
+
+        return redirect('/');
+    }
 }

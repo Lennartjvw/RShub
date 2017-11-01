@@ -11,6 +11,7 @@
                     <h1>Your Profile:</h1>
                     <li>Name: {!! $user->name !!}</li>
                     <li>Email: {!! $user->email !!}</li>
+                    <a href="\user\{{ $user->id }}\edit">Edit</a>
                 </div>
 
                 <hr>
@@ -19,6 +20,7 @@
                     <li>Game ID: {{ $review->game_id }}</li>
                     <li>Review: {{ $review->review }}</li>
                     <li>Rating: {{ $review->rating }}</li>
+                    <a href="\games\edit-review\{{ $review->id }}">Edit</a>
                     <hr>
                 @endforeach
 
