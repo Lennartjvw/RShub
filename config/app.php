@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Messerli90\IGDB\IGDBServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
 
 
         /*
@@ -229,6 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'IGDB' => \Messerli90\IGDB\Facades\IGDB::class,
+        'Form'=> Illuminate\Html\FormFacade::class,
+        'HTML'=> Illuminate\Html\HtmlFacade::class
 
 
     ],
