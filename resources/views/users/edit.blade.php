@@ -17,18 +17,24 @@
 
                     <form action="/user/{{ $user->id }}/edit" method="POST">
                         {!! method_field('patch') !!}
-
                         {{ csrf_field() }}
 
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name"><br>
-v
+                        <input type="text" id="name" name="name" value=" {{ $user->name }} "><br>
+
                         <label for="name">Email:</label>
-                        <input type="text" id="email" name="email"><br>
+                        <input type="text" id="email" name="email" value=" {{ $user->email }} "><br>
 
                         <input type="submit" value="Submit"><br>
 
                     </form>
+
+                    <form action="/user/{{ $user->id }}/edit" method="POST">
+                        {!! method_field('delete') !!}
+                        {{ csrf_field() }}
+                        <input type="submit" value="Delete"><br>
+                    </form>
+
 
                 </div>
 

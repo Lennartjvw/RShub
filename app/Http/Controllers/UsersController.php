@@ -46,4 +46,17 @@ class UsersController extends Controller
         return redirect('games');
     }
 
+    public function delete($id)
+    {
+        $user = User::findOrFail($id);
+        $reviews = Review::where("user_id", "=", $user->id);
+        $stories = Story::where("user_id", "=", $user->id);
+
+        $reviews->delete();
+        $stories->delete();
+        $user->delete();
+
+        return redirect('/');
+    }
+
 }

@@ -26,4 +26,5 @@ Route::post('/games/create-review', 'ReviewsController@store');
 Route::get('/user/{id}', 'UsersController@show');
 Route::get('/user/{id}/edit', 'UsersController@edit');
 Route::patch('/user/{id}/edit', 'UsersController@update');
+Route::delete('/user/{id}/edit', 'UsersController@delete');
 
