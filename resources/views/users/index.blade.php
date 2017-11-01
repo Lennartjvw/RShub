@@ -28,6 +28,7 @@
                 @foreach($stories as $story)
                     <li>Game ID: {{ $story->game_id }}</li>
                     <li>Review: {{ $story->story }}</li>
+                    <a href="\games\edit-story\{{ $story->id }}">Edit</a>
                     <hr>
                 @endforeach
 

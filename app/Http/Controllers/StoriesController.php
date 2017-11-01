@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Game;
 use App\Story;
 
+use App\User;
+use Auth;
+
 class StoriesController extends Controller
 {
 
@@ -36,6 +39,30 @@ class StoriesController extends Controller
 
     public function edit($id){
 
+        $story = Story::findOrFail($id);
+        $user = Auth::user();
+
+        if ($user->id == $story->user_id) {
+            return view('stories.edit', compact('review', 'story'));
+        }
+        else {
+            return redirect('/games');
+        }
+    }
+
+    public function update($id, Request $request){
+
+        $story = Story::findOrFail($id);
+        $story->update($request->all());
+
+        return redirect('games');
+    }
+
+    public function delete($id){
+        $story = Story::findOrFail($id);
+        $story->delete();
+
+        return redirect('/');
     }
 
 }

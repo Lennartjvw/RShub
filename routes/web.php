@@ -18,6 +18,8 @@ Route::get('/games/{game}', 'GamesController@show');
 Route::get('/games/{game}/create-story', 'StoriesController@create');
 Route::post('/games/create-story', 'StoriesController@store');
 Route::get('/games/edit-story/{id}', 'StoriesController@edit');
+Route::patch('/games/edit-story/{id}', 'StoriesController@update');
+Route::delete('/games/edit-story/{id}', 'StoriesController@delete');
 
 //Reviews
 Route::get('/games/{game}/create-review', 'ReviewsController@create');
