@@ -54,14 +54,12 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                    <a href="{{ url('/user/'.Auth::user()->id) }}"><i class="fa fa-btn fa-sign-out"></i>My Account</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
-
-                                        {{--<a href="{{ route('games') }}"> My page</a>--}}
-
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>

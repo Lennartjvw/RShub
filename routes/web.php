@@ -34,3 +34,6 @@ Route::get('/user/{id}/edit', 'UsersController@edit');
 Route::patch('/user/{id}/edit', 'UsersController@update');
 Route::delete('/user/{id}/edit', 'UsersController@delete');
 
+//Admin
+Route::get('/admin', 'AdminsController@index');
+
