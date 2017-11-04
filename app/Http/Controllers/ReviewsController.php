@@ -52,7 +52,7 @@ class ReviewsController extends Controller
         $review = Review::findOrFail($id);
         $user = Auth::user();
 
-        if ($user->id == $review->user_id) {
+        if ($user->id == $review->user_id || Auth::user()->hasRole('Admin')) {
             return view('reviews.edit', compact('review', 'user'));
         }
         else {

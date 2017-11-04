@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use Auth;
 
 class GamesController extends Controller
 {
@@ -16,7 +17,14 @@ class GamesController extends Controller
     }
 
     public function add(){
-        return view('games.add');
+
+        if (Auth::user()->hasRole('Editor') or Auth::user()->hasRole('Admin')){
+            return view('games.add');
+        }
+        else {
+            return redirect('/games');
+        }
+
     }
 
     public function store(Game $game){

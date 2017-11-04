@@ -13,8 +13,8 @@
                         <img src="{{ $game->image_url }}" alt="Image not found" width="200px">
                     </li>
 
-                    <li><a href="{{ url('/games/'.$game->id.'/create-review') }}">Create a review</a> </li>
-                    <li><a href="{{ url('/games/'.$game->id.'/create-story') }}">Create a story</a> </li>
+                    <li><a href="{{ url('/games/'.$game->id.'/create-review') }}">Create a review</a></li>
+                    <li><a href="{{ url('/games/'.$game->id.'/create-story') }}">Create a story</a></li>
 
                     <a href="{{ url('/games') }}"><p>Go back</p></a>
 
@@ -27,6 +27,9 @@
                     <li>Review written by {{ $review->user->name }} at {{ $review->created_at }}</li>
                     <li>Review: {{ $review->review }}</li>
                     <li>Rating: {{ $review->rating}}</li>
+                    @if (Auth::user()->hasRole('Admin'))
+                        <a href="\games\edit-review\{{ $review->id }}">Edit</a>
+                    @endif
                     <hr>
                 @endforeach
 
@@ -36,6 +39,9 @@
                     <li>Game: {{ $game->name }}</li>
                     <li>Story written by {{ $story->user->name }} at {{ $story->created_at }}</li>
                     <li>Story {{ $story->story }}</li>
+                    @if (Auth::user()->hasRole('Admin'))
+                        <a href="\games\edit-story\{{ $story->id }}">Edit</a>
+                    @endif
                     <hr>
                 @endforeach
             </div>

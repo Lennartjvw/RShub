@@ -17,7 +17,7 @@
                         @foreach($user->roles as $v)
                             <li>{{ $v->name }}</li>
                         @endforeach
-                        <a><li>Edit</li></a>
+                        <a href="\user\{{ $user->id }}\edit">Edit</a>
 
                         {{--<li>{{ $user->role->name}}</li>--}}
                         {{--<li>{{ $user->role->name}}</li>--}}

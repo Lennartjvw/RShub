@@ -11,11 +11,6 @@ class AdminsController extends Controller
 {
     public function index(){
         $users = user::all();
-//        $role = user::first()->roles->first()->name;
-//        $roles = role::all();
-
-//        dd($role);
-
         return view ('admins.index', compact('users'));
     }
 }

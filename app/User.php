@@ -2,8 +2,12 @@
 
 namespace App;
 
+use App\Role;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
+
 
 class User extends Authenticatable
 {
@@ -68,6 +72,14 @@ class User extends Authenticatable
 //        }
 //        return false;
 //    }
+
+    public function hasRole($name){
+        foreach ($this->roles as $role)
+        {
+            if ($role->name == $name) return true;
+        }
+        return false;
+    }
 
 
 }

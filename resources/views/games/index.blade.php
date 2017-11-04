@@ -9,6 +9,9 @@
                 </div>
                 <div class="panel panel-default">
                     <h1>All ps4 games</h1>
+                    @if (Auth::user()->hasRole('Editor') || Auth::user()->hasRole('Admin'))
+                        <a href="/games/add-game">Add Game</a>
+                    @endif
 
                     @foreach($games as $game)
                         <a href="/games/{{ $game->id }}">

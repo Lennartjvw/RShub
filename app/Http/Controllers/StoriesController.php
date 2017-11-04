@@ -42,7 +42,7 @@ class StoriesController extends Controller
         $story = Story::findOrFail($id);
         $user = Auth::user();
 
-        if ($user->id == $story->user_id) {
+        if ($user->id == $story->user_id || Auth::user()->hasRole('Admin')) {
             return view('stories.edit', compact('review', 'story'));
         }
         else {
